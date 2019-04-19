@@ -7,9 +7,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Recipe App</title>
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link rel="stylesheet" href="style.css"> -->
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
         </script>
     </head>
@@ -17,17 +19,21 @@
         
         <div class = "search-field hidden">
         <h1>Clear out your kitchen!</h1>
-        <form action = '#' class = 'js-search-form'>
+        <h2>Need to make a meal but don't want to leave your house or order out? Throw some things you have in 
+            your fridge into the seachbar to get a recipe to make!</h2>
+            <form action = '#' class = 'js-search-form'>
           <input type='text' placeholder="Type Here" class="js-query" required aria-label ="search query">
             <button type="submit">Search</button>
+            <h2>Recipe Results</h2>
         </form>
       </div>
         
      <main role="main" class="js-output" aria-live="assertive">
         <div class="result-area">
          
-          <h2>Recipe Results</h2>
+         
           <div class= "search-results-written">
+                
           </div>
         </div>
         

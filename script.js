@@ -44,9 +44,7 @@ function renderResult(result) {
         console.log('nope');
         return `
         <h2>Sorry, there's no recipes like that here!</h2>`
-        else {
-            return
-        }
+        
 
     
         $('.search-results-written').html(results);
@@ -97,6 +95,3 @@ function renderResult(result) {
   
   
   $(watchSubmit); 
-  
-
-    
