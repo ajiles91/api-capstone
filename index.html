@@ -1,0 +1,37 @@
+<<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Recipe App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="stylesheet" href="style.css"> -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+        </script>
+    </head>
+    <body>
+        
+        <div class = "search-field hidden">
+        <h1>Clear out your kitchen!</h1>
+        <form action = '#' class = 'js-search-form'>
+          <input type='text' placeholder="Type Here" class="js-query" required aria-label ="search query">
+            <button type="submit">Search</button>
+        </form>
+      </div>
+        
+     <main role="main" class="js-output" aria-live="assertive">
+        <div class="result-area">
+         
+          <h2>Recipe Results</h2>
+          <div class= "search-results-written">
+          </div>
+        </div>
+        
+      </main>
+      <script src="script.js"></script>
+    </body>
+</html>
