@@ -39,21 +39,15 @@ function renderResult(result) {
   function displayRecipeData(data) {
     const results = data.hits.map((item,index) => renderResult(item)); 
     console.log(data);
-    for (key in obj) {}
+
     if (Object.keys(data).length == 0){
-        console.log('nope');
-        return `
-        <h2>Sorry, there's no recipes like that here!</h2>`
+        return `<h2>Sorry, there's no recipes like that here!</h2>`
         
-
-    
-        $('.search-results-written').html(results);
-    
-        $('.search-results-written')
-        .prop('hidden', false)
-        .html(results);
     }
-
+    $('.search-results-written')
+    .prop('hidden', false)
+    .html(results);
+}
   
   
   
@@ -81,9 +75,6 @@ function renderResult(result) {
   }
   
 
-  
-  //jQuery Events
-  //document.ready(() => 
     
     
   $(document).ready(function () {
@@ -94,4 +85,4 @@ function renderResult(result) {
   
   
   
-  $(watchSubmit); }
+  $(watchSubmit); 
