@@ -2,6 +2,9 @@
 
 Live Link:
 
+<https://ajiles91.github.io/api-capstone/>
+
+Github Repo:
 <https://github.com/ajiles91/api-capstone>
 
 Screenshots:
