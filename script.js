@@ -42,10 +42,15 @@ function renderResult(result) {
 
 
   function displayRecipeData(data) {
-    const results = data.hits.map((item,index) => renderResult(item)); 
-    if (Object.keys(data).length == 0){
-        return `<h2>Sorry, there's no recipes like that here!</h2>`
-    }
+    if (data.hits.length == 0) {
+      $('.error-catch').html("no results found")
+      $('.single-result')
+      }
+        else {
+          $('.error-catch').html(" ")
+      const results = data.hits.map((item,index) => renderResult(item)); 
+
+
     $('.search-results-written').html(results);
 
     $('.search-results-written')
@@ -82,4 +87,5 @@ function renderResult(result) {
       $('div.hidden').fadeIn(1000).removeClass('hidden');
   });
   
- $(watchSubmit); 
+ $(watchSubmit);
+} 
