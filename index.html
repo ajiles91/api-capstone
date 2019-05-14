@@ -3,41 +3,44 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Recipe App</title>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Recipe App</title>
 
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
-        </script>
-    </head>
-    <body>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
+  </head>
+
+  <body>
         
-        <div class = "search-field hidden">
-        <h1>Clear out your kitchen!</h1>
-        <h2>Need to make a meal but don't want to leave your house or order out? Throw some things you have in 
-            your fridge into the seachbar to get a recipe to make!</h2>
-            <form action = '#' class = 'js-search-form'>
-            <input type='text' placeholder="Type Here" class="js-query" required aria-label ="search query">
-            <button type="submit">Search</button>
+    <section class = "search-field hidden">
+      <form action = '#' class = 'js-search-form'>
+        <formset>
+            <legend>
+              Have a bunch of ingredients but don't know what to make? Need to eat but don't want to leave your house or order out? 
+              Throw some things you have in your fridge into the seachbar to get a recipe to make!
+            </legend>
+            <label for="ingrdient-inputs">
+              <input type='text' placeholder="Type All Ingredients Here" class="js-query" required aria-label ="search query">
+            </label>
+          <button type="submit">Search</button>
             
-        </form>
-      </div>
+          </formset>
+      </form>
+    </section>
         
-     <main role="main" class="js-output" aria-live="assertive">
-        <div class="result-area">
-         
-         
-          <div class= "search-results-written">
-                
+    <main role="main" class="js-output" aria-live="assertive">
+      <div class="result-area">
+         <div class= "search-results-written">
           </div>
         </div>
-        
+        <section class="error-catch"></section>
       </main>
       <script src="script.js"></script>
-    </body>
+  </body>
 </html>
