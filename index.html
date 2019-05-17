@@ -17,6 +17,9 @@
   </head>
 
   <body>
+    <header>
+      Clear Out Your Fridge!
+    </header>
         
     <section class = "search-field hidden">
       <form action = '#' class = 'js-search-form'>
@@ -35,10 +38,12 @@
     </section>
         
     <main role="main" class="js-output" aria-live="assertive">
-      <div class="result-area">
-         <div class= "search-results-written">
-          </div>
-        </div>
+      <section class="result-area">
+        <h2>Recipe Results</h2>
+         <section class= "search-results-written">
+           <button type="more-results">Load More Results!</button>
+          </section>
+        </section>
         <section class="error-catch"></section>
       </main>
       <script src="script.js"></script>

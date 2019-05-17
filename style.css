@@ -20,17 +20,17 @@ body {
     display: flex;
     flex-direction: column;
 }
-.hidden {
+/* .hidden {
     display: none; 
     height: 80px;
-  }
+  } */
   .single-result {
       display: flex;
       background-color:  rgb(128,128,128, 0.7);
       border: 2px solid black;
     }
 
-  @media (max-width: 1050px) {
+    /* @media (max-width: 1050px) {
 
     .single-result {
         display: flex;
@@ -40,8 +40,11 @@ body {
         display: flex;
         flex-direction: column;
     }
-    h1 {
+    .result-area {
         display: flex;
         flex-direction: column;
     }
-  } 
+    h1 {
+        display: flex;
+        flex-direction: column;
+    } */

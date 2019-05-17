@@ -15,25 +15,49 @@ function getDataFromFoodApi(searchTerm, callback) {
     $.getJSON(SEARCH_URL, query, callback);
 }
 
+const URL = 'https://api.edamam.com/api/nutrition-details?app_id=41225157&app_key=c1a7c26bf9e4a557a2097e482619d842'
+
+function getDataFromNutritionalApi() {
+  fetch(URL, {  
+    method: 'POST',  
+    headers: {  
+      "Content-Type": 'application/json'  
+    },  
+     body: 'q=`${query}`'
+  })
+  }
+  .then(function (data) {  
+  console.log('Request success: ', data);  
+})  
+.catch(function (error) {  
+  console.log('Request failure ', error);  
+});
+
+
+
+
 function renderResult(result) {
     return `
     
-    <div class="single-result">
+    <section class="single-result">
     
         <h2 class ="js-result-name">
           <a href="${result.recipe.url}" target= "_blank" title="${result.recipe.label}">${result.recipe.label} </a>   
         </h2>
-      <div class="recipeIcons">
+      <section class="recipeIcons">
         <a href="${result.recipe.url}" target="_blank"><img src="${result.recipe.image}" class="thumbnail" title="Go to this recipe"></a>
-      </div>
-      <div>
-        <div>
+      </section>
+      <section>
+        <section>
           <p class="ingredient-ul">Ingredients for this Recipe:
             ${makeList(result.recipe.ingredientLines)} 
           </p>
-        </div>
-      </div>
-    </div>
+        </section>
+        <p class = "nutrient-list>Nutriotional Facts:
+        ${makeList()}
+        </p>        
+      </section>
+    </section>
     
     `; 
   }
@@ -79,13 +103,12 @@ function renderResult(result) {
       const query = queryTarget.val(); 
       queryTarget.val(""); 
       getDataFromFoodApi(query, displayRecipeData);
+
       $('.result-area').show(); 
     }); 
   }
-  
-  $(document).ready(function () {
-      $('div.hidden').fadeIn(1000).removeClass('hidden');
-  });
-  
- $(watchSubmit);
 } 
+$(document).ready(function () {
+  $('section.hidden').fadeIn(1000).removeClass('hidden');
+});
+$(watchSubmit);
