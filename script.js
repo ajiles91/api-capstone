@@ -3,7 +3,14 @@
     
 const SEARCH_URL = 'https://api.edamam.com/search'; 
 
+// 1. Compose the request for the 1st api and submit the request.
+// 2. Obtain the response of the 1st api (most likely through a callback function)
+// 3. In that callback function, you compose the request for the 2nd api (in this case, you will compose a JSON object and set the title there), then submit the request.
+// 4. Then obtain the response of the 2nd api.
+
 //send GET requests
+
+const nutritionalURL = 'https://api.edamam.com/api/nutrition-details?app_id=41225157&app_key=c1a7c26bf9e4a557a2097e482619d842'
 function getDataFromFoodApi(searchTerm, callback) {
     const query = {
       q: `${searchTerm}`,
@@ -14,25 +21,19 @@ function getDataFromFoodApi(searchTerm, callback) {
     };
     $.getJSON(SEARCH_URL, query, callback);
 }
-
-const URL = 'https://api.edamam.com/api/nutrition-details?app_id=41225157&app_key=c1a7c26bf9e4a557a2097e482619d842'
-
-function getDataFromNutritionalApi() {
-  fetch(URL, {  
-    method: 'POST',  
-    headers: {  
-      "Content-Type": 'application/json'  
-    },  
-     body: 'q=`${query}`'
+ function getNutriData() {
+  fetch(nutritionalURL, {
+    method: 'POST',
+    headers: {
+      "content-Type:" : 'application/json'
+    },
+    body: JSON.stringify({
+      title: `${response.title}`,
+      ingr: `${searchTerm}`,
+    })
+   .then(response => response.json())
   })
-  }
-  .then(function (data) {  
-  console.log('Request success: ', data);  
-})  
-.catch(function (error) {  
-  console.log('Request failure ', error);  
-});
-
+ }
 
 
 
@@ -53,8 +54,8 @@ function renderResult(result) {
             ${makeList(result.recipe.ingredientLines)} 
           </p>
         </section>
-        <p class = "nutrient-list>Nutriotional Facts:
-        ${makeList()}
+        <p class = "nutrient-list>Nutritional Facts:
+        ${totalNutrients[i]}
         </p>        
       </section>
     </section>
@@ -81,6 +82,7 @@ function renderResult(result) {
     .prop('hidden', false)
     .html(results);
     }
+  }
   
   
   
@@ -95,6 +97,8 @@ function renderResult(result) {
     }
     return list.outerHTML; 
   }
+  // function makeListNutrData(array)
+  // for (let i= 0: i < array.length; i++)
   
   function watchSubmit() {
     $('.js-search-form').submit(event => {
@@ -107,8 +111,9 @@ function renderResult(result) {
       $('.result-area').show(); 
     }); 
   }
-} 
+
 $(document).ready(function () {
   $('section.hidden').fadeIn(1000).removeClass('hidden');
 });
+
 $(watchSubmit);
