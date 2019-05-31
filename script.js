@@ -52,8 +52,8 @@ function renderResult(result) {
 
 
 function displayRecipeData(data) {
-  if (data.count === 0) {
-    $('.error-catch').html("no results found")
+  if (Response.ok === false) {
+    $('.error-catch').html(`<h2>no results found</h2>`)
   }
 
   else {
@@ -169,7 +169,7 @@ function watchSubmit() {
   }); 
 }
 
-document.getElementsById('closeButton').addEventListener('click', function(event) {
+document.getElementById('closeButton').addEventListener('click', function(event) {
   event.preventDefault();
   this.parentNode.style.display = 'none';
 }, false); 
