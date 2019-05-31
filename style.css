@@ -69,6 +69,10 @@ h1 {
     margin: 4vh auto;
 }
 
+legend {
+    text-align: center;
+}
+
 .ingredientItems {
     width: 50%;
     float: left; 
@@ -106,9 +110,14 @@ h1 {
     flex-direction: column;
 }
 
+form {
+    text-align: center;
+}
 .js-search-form label,
 .js-search-form input,
-.js-search-form button {
+.js-search-form button,
+.js-search-form legend
+ {
   display: block;
   padding: .2em .5em;
   margin: auto;
