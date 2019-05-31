@@ -1,9 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+
 body {
     background-image: url(inside-fridge.jpg);
     font-family: 'Lato', sans-serif;
     background-size: cover;
     display: flex;
-    align-items:center;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
@@ -13,38 +19,262 @@ body {
     flex-direction: column;
     background-color: rgb(128,128,128, 0.7);
     border: 2px solid black;
+    justify-content: center;
     
 }
+
+.vidThumbnail {
+    display: block; 
+    margin: auto;  
+    width: 50%;
+    height: 50%;
+}
+
+.thumbnail{
+    width: 100%;
+}
+
+.ingredientItems {
+    width: 50%;
+    float: left; 
+    max-height: 200px;
+    padding: 2px;
+    font-size: .75em; 
+}
+
+.result-area {
+    max-width: 1000px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+    display: none; 
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 20px; 
+}
+
+.videoIcon {
+    width: 25%;
+    cursor: pointer;
+    color: #d9d9d9; 
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+h1 {
+    text-align: center;
+    font-size: 8vh;
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 20px; 
+    max-width: 480px;
+    margin: 4vh auto;
+}
+
+.ingredientItems {
+    width: 50%;
+    float: left; 
+    max-height: 200px;
+    padding: 2px;
+    font-size: .75em; 
+}
+
+.videoResult {
+    display: none;
+    background-color: rgb(10,10,10); 
+    background-color: rgba(10,10,10,0.9);
+    z-index: 10;
+    width: 50vw;
+    height: 75vh;
+    position: fixed;
+    margin:auto;
+    top: 50%;
+    transform: translate(-50%,-50%); 
+    overflow: scroll;
+    left: 50%;
+}
+
+.closeButton {
+    cursor: pointer; color: white; 
+    font-size: 30px;  
+    position: fixed; 
+    right: 15px;
+    padding-bottom: 50px;
+}
+
 .js-search-form {
     width: 60%;
     display: flex;
     flex-direction: column;
 }
-/* .hidden {
+
+.js-search-form label,
+.js-search-form input,
+.js-search-form button {
+  display: block;
+  padding: .2em .5em;
+  margin: auto;
+  width: 75%;
+  font-size: 4vh;
+}
+
+.ingredientItems {
+    width: 50%;
+    float: left; 
+    max-height: 200px;
+    padding: 2px;
+    font-size: .75em; 
+}
+
+
+.search-results-written {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px; 
+}
+
+.recipeIcons a {
+    display: inline-block; 
+    width: calc(75% - 5px); 
+    margin-right: 5px; 
+    vertical-align: middle;
+}
+
+
+.single-result {
+    background-color:  rgb(128,128,128, 0.95);
+    border: 2px solid black dotted;
+    max-height: 475px;
+    overflow: hidden; 
+    display: grid; 
+    grid-template-rows: 1fr; 
+    border-radius: 20px;
+    text-align: left;
+}
+
+    
+.hidden {
     display: none; 
     height: 80px;
-  } */
-  .single-result {
-      display: flex;
-      background-color:  rgb(128,128,128, 0.7);
-      border: 2px solid black;
-    }
+}
 
-    /* @media (max-width: 1050px) {
+.videoPopUp {
+    text-align: center; 
+    color: white; 
+    padding-top: 15px; 
+}
 
-    .single-result {
-        display: flex;
-        flex-direction: column;
+.videoPopUp a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 auto;
+    position: relative;
+    display: inline-block;
+}
+
+.videoPopUp > * a:before {
+    position: absolute;
+    margin: 0 auto;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    content: '';
+    opacity: .3;
+    -webkit-transform: scaleX(.9);
+    transition-property: opacity, -webkit-transform;
+    transition-duration: .3s;
+}
+
+.videoPopUp a:hover:before {
+    opacity: 1;
+   -webkit-transform: scaleX(1);
+}
+
+
+h2 {
+    text-align: center;
+    font-size: large;
+    min-width: 0;
+}
+
+.js-result-name a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    margin: 0 2px;
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+    width: 100%; 
+    overflow: hidden; 
+    display: inline-block;
+    
+}
+
+.js-result-name:before {
+    position: absolute;
+    margin: 0 auto;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    content: '';
+    opacity: .3;
+    -webkit-transform: scaleX(.9);
+    transition-property: opacity, -webkit-transform;
+    transition-duration: .3s;
+}
+
+.js-result-name:hover:before{
+    opacity: 1;
+    -webkit-transform: scaleX(1);
+}
+  
+.js-result-name {
+    position: relative;
+}
+
+.scroll-box {
+    width: 100%;
+    height: 295px;
+    overflow-y: scroll;
+}
+
+.scroll-box::-webkit-scrollbar {
+    width: .4em; 
+}
+
+.scroll-box::-webkit-scrollbar,
+  .scroll-box::-webkit-scrollbar-thumb {
+    overflow:visible;
+    border-radius: 4px;
+}
+
+.scroll-box::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,.2); 
+}
+
+
+.cover-bar {
+    position: absolute;
+    background: #fff;;
+    height: 100%;  
+    top: 0;
+    right: 0;
+    width: .4em;
+    -webkit-transition: all .5s;
+    opacity: 1;
+}
+
+@media only screen and (max-width: 639px) {
+    .search-results-written{
+      grid-template-columns: 1fr 1fr;
+      
+      }
     }
-    .search-field {
-        display: flex;
-        flex-direction: column;
+    @media only screen and (max-width: 450px) {
+    .search-results-written{
+      grid-template-columns: 1fr; 
+      
+      }
     }
-    .result-area {
-        display: flex;
-        flex-direction: column;
-    }
-    h1 {
-        display: flex;
-        flex-direction: column;
-    } */

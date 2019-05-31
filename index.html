@@ -1,14 +1,12 @@
-<<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<html class="no-js"> <!--<![endif]-->
+<!DOCTYPE html>
+
+<html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Recipe App</title>
+    <title>Clean Out Your Fridge Recipe App</title>
 
-    <meta name="description" content="">
+    <meta name="description" content="A recipe finder app">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -17,11 +15,10 @@
   </head>
 
   <body>
-    <header>
-      Clear Out Your Fridge!
-    </header>
-        
     <section class = "search-field hidden">
+        <header>
+            <h1>Clear Out Your Fridge!</h1>
+        </header>
       <form action = '#' class = 'js-search-form'>
         <formset>
             <legend>
@@ -29,7 +26,7 @@
               Throw some things you have in your fridge into the seachbar to get a recipe to make!
             </legend>
             <label for="ingrdient-inputs">
-              <input type='text' placeholder="Type All Ingredients Here" class="js-query" required aria-label ="search query">
+              <input type='text' placeholder="Ingredients Here!" class="js-query" required aria-label ="search query">
             </label>
           <button type="submit">Search</button>
             
@@ -37,15 +34,19 @@
       </form>
     </section>
         
-    <main role="main" class="js-output hidden" aria-live="assertive">
+    <main role="main" class="js-output" aria-live="assertive">
       <section class="result-area">
-        <h2>Recipe Results</h2>
-         <section class= "search-results-written">
-           <button type="more-results">Load More Results!</button>
-          </section>
+
+        <section class="videoResult">
+          <span class="closeButton" aria-label="close">&times;</span>
         </section>
+
+        <h2>Recipe Results</h2>
+        <section class= "search-results-written"></section>
         <section class="error-catch"></section>
-      </main>
-      <script src="script.js"></script>
+        
+      </section>
+    </main>
+   <script src="script.js"></script>
   </body>
 </html>
