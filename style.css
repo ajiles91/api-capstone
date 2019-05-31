@@ -92,7 +92,7 @@ h1 {
     left: 50%;
 }
 
-.closeButton {
+#closeButton {
     cursor: pointer; color: white; 
     font-size: 30px;  
     position: fixed; 
