@@ -169,7 +169,7 @@ function watchSubmit() {
   }); 
 }
 
-document.getElementById('closeButton').addEventListener('click', function(event) {
+document.getElementsByClassName('closeButton').addEventListener('click', function(event) {
   event.preventDefault();
   this.parentNode.style.display = 'none';
 }, false); 
