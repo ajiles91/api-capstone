@@ -52,7 +52,7 @@ function renderResult(result) {
 
 
 function displayRecipeData(data) {
-  if (response.ok === false) {
+  if (data.ok === false) {
     $('.error-catch').html(`<h2>No Results Found</h2>`)
   }
 
