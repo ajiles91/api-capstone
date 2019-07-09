@@ -1,38 +1,43 @@
 <!DOCTYPE html>
-
 <html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Clean Out Your Fridge Recipe App</title>
-
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <meta name="description" content="A recipe finder app">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    <script 
+    src="https://code.jquery.com/jquery-3.2.1.min.js" 
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" 
+    crossorigin="anonymous">
     </script>
   </head>
 
   <body>
     <section class = "search-field hidden">
-        <header>
-            <h1>Clear Out Your Fridge!</h1>
-        </header>
-      <form action = '#' class = 'js-search-form'>
-        <formset>
+      <header>
+        <h1>Clear Out Your Fridge!</h1>
+      </header>
+
+        <form action = '#' class = 'js-search-form'>
+          <formset>
             <legend>
               Have a bunch of ingredients but don't know what to make? Need to eat but don't want to leave your house or order out? 
               Throw some things you have in your fridge into the seachbar to get a recipe to make!
             </legend>
-            <label for="ingredient-inputs">
-              <input type='text' placeholder="Ingredients Here!" class="js-query" required aria-label ="search query">
-            </label>
-          <button type="submit">Search</button>
             
+            <label for="ingredient-inputs">
+               <input type='text' placeholder="Items Here!" class="js-query" required aria-label ="search query">
+            </label>
+            
+            <button type="submit">Search</button>
+              
           </formset>
-      </form>
+        </form>
     </section>
+      
         
     <main role="main" class="js-output" aria-live="assertive">
       <section class="result-area">
@@ -47,6 +52,6 @@
 
       </section>
     </main>
-   <script src="script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

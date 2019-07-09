@@ -1,11 +1,5 @@
 'use strict';
 
-// 1. Compose the request for the 1st api and submit the request.
-// 2. Obtain the response of the 1st api (most likely through a callback function)
-// 3. In that callback function, you compose the request for the 2nd api (in this case, you will compose a JSON object and set the title there), then submit the request.
-// 4. Then obtain the response of the 2nd api.
-    
-
 //send GET requests
 const SEARCH_URL = 'https://api.edamam.com/search'; 
 

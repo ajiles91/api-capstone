@@ -35,6 +35,7 @@ h1 {
     padding: .2em .5em;
     margin: auto;
     width: 75%;
+    border-radius: 20px; 
     font-size: 4vh;
 }
 
@@ -61,15 +62,20 @@ h1 {
     background-color: rgb(10,10,10); 
     background-color: rgba(10,10,10,0.9);
     z-index: 10;
-    width: 50vw;
-    height: 75vh;
+    width: 100%;
+    height: 100vh;
     position: fixed;
-    margin:auto;
+    margin: auto;
     top: 50%;
     transform: translate(-50%,-50%); 
     overflow: scroll;
     left: 50%;
 }
+
+.js-search-form button {
+    color: gray;
+}
+
 
 #closeButton {
     cursor: pointer; 
@@ -119,12 +125,12 @@ h2 {
 .recipeIcons a {
     display: inline-block; 
     width: calc(75% - 5px); 
-    margin-right: 5px; 
+    /* margin-right: 5px;  */
     vertical-align: middle;
 }
 
 .single-result {
-    border: 2px solid black dotted;
+    border: 2px black dotted;
     border-radius: 20px;
     text-align: left;
     background-color:  rgba(128,128,128, 0.8);
